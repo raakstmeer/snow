@@ -4,7 +4,7 @@ const menu = document.querySelector('.mainMenu');
 
 function showMenu(){
 
-  const barIcon = document.querySelector('#cross i')
+  const barIcon = document.querySelector('#cross i');
   if(barIcon.classList.contains('bx-menu')){
     barIcon.classList.remove('bx-menu');
     barIcon.classList.add('bx-menu-alt-right');
@@ -140,6 +140,15 @@ window.addEventListener('scroll',function(){
     gotoTop.style.opacity = '0';
     gotoTop.style.visibility = 'hidden';
   }
+
+// window clicked and then hide navbar 
+
+  if(menu.classList.contains('collapse')){
+    menu.classList.remove('collapse');
+    barIcon.classList.remove('bx-menu-alt-right');
+    barIcon.classList.add('bx-menu');
+  }
+
 })
 
 // click any menu items then hide all menulist 
