@@ -3,6 +3,7 @@
 const menu = document.querySelector('.mainMenu');
 
 function showMenu(){
+
   const barIcon = document.querySelector('#cross i')
   if(barIcon.classList.contains('bx-menu')){
     barIcon.classList.remove('bx-menu');
@@ -14,6 +15,24 @@ function showMenu(){
     menu.classList.remove('collapse')
   }
 }
+
+
+// navbar link click any link then hide navbar
+
+const navLink = menu.querySelectorAll('a');
+const barIcon = document.querySelector('#cross i')
+
+navLink.forEach((a)=>{
+  a.addEventListener('click',()=>{
+    if(a.parentElement.classList.contains('collapse')){
+      a.parentElement.classList.remove('collapse')
+    }
+    if(barIcon.classList.contains('bx-menu-alt-right')){
+      barIcon.classList.remove('bx-menu-alt-right');
+      barIcon.classList.add('bx-menu');
+    }
+  })
+})
 
 // contact form add javascript 
 
